@@ -1,3 +1,11 @@
+// var admin = require("firebase-admin");
+
+// var serviceAccount = require("./key.json");
+
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+// });
+
 // SDK 초기화
 const {
   initializeApp,
@@ -11,7 +19,7 @@ const {
   FieldValue,
 } = require("firebase-admin/firestore");
 
-initializeApp();
+// initializeApp();
 const db = getFirestore();
 
 //////////////////// Add Data ////////////////////////
@@ -38,28 +46,28 @@ async function quickstartAddData(db) {
   // [END firestore_setup_dataset_pt2]
 }
 
-//////////////////// Read Data ////////////////////////
-async function quickstartListen(db) {
-  // [START firestore_setup_dataset_read]
-  const snapshot = await db.collection("users").get();
-  snapshot.forEach((doc) => {
-    console.log(doc.id, "=>", doc.data());
-  });
-  // [END firestore_setup_dataset_read]
-}
+// //////////////////// Read Data ////////////////////////
+// async function quickstartListen(db) {
+//   // [START firestore_setup_dataset_read]
+//   const snapshot = await db.collection("users").get();
+//   snapshot.forEach((doc) => {
+//     console.log(doc.id, "=>", doc.data());
+//   });
+//   // [END firestore_setup_dataset_read]
+// }
 
-quickstartAddData(db);
-quickstartListen(db);
+// quickstartAddData(db);
+// quickstartListen(db);
 
-
-// // The Cloud Functions for Firebase SDK to create Cloud Functions and set up triggers.
+// // // The Cloud Functions for Firebase SDK to create Cloud Functions and set up triggers.
 // const functions = require("firebase-functions");
 
-// // The Firebase Admin SDK to access Firestore.
-// const admin = require("firebase-admin");
-// admin.initializeApp();
+// // // The Firebase Admin SDK to access Firestore.
+// // const admin = require("firebase-admin");
+// // admin.initializeApp();
 
 // exports.helloWorld = functions.https.onRequest((req, res) => {
+//   console.log("진우");
 //   res.send("Hello from firebase function...");
 // });
 
